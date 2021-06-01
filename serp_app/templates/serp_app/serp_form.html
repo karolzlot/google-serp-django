@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<br>
+<div class="container text-center">
+  <h1>Google Serp</h1>
+  <br>
+  <form action="">
+    Query: <br><input type="input" name="query">
+    <br><br>
+    Browser: <br><select name="browser">
+      <option value="chrome" selected="selected">chrome</option>
+      <option value="firefox">firefox</option>
+    </select>
+    <br><br>
+    Time limit (in seconds) for cached results to be shown: <br><input type="number" value="2400" name="recent_time_limit">
+    <br><br>
+    <!-- Proxy (optional): <br><input type="input" name="proxy">
+    <br><br> -->
+    <input type="submit" value="Get search results" class="btn btn-primary">
+  </form>
+
+
+{% if show_result %}
+  <section>
+    <h2>Result:</h2>
+        <div>
+          <div>
+            <h4>{{ result_db_object.query }}</h4>
+            <p>from cache: <b>{{ from_cache }}</b></p>
+          </div>
+          <div>
+            <p>number of results: {{ result_db_object.results_total }}</p>
+            <p>ip: {{ result_db_object.client_ip }}</p>
+          </div>
+          <div>
+            <p><b>words:</b></p>
+            <ol>
+              {% for word in word_db_objects %}
+                  <li>{{ word.word }} ({{ word.occurances }})</li>
+              {% endfor %}
+            </ol>
+          </div>
+          <div>
+            <p><b>links:</b></p>
+            <ol>
+              {% for link in link_db_objects %}
+                  <li> ({{ link.position }}). {{ link.link }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+        </div>
+  </section>
+{% endif %}
+
+
+</div>
