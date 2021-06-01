@@ -4,17 +4,19 @@
   <h1>Google Serp</h1>
   <br>
   <form action="">
-    Query: <br><input type="input" name="query">
+    Query: <br><input type="input" name="query" value="{{ result_db_object.query }}">
     <br><br>
     Browser: <br><select name="browser">
       <option value="chrome" selected="selected">chrome</option>
       <option value="firefox">firefox</option>
     </select>
     <br><br>
-    Time limit (in seconds) for cached results to be shown: <br><input type="number" value="2400" name="recent_time_limit">
+    Time limit (in seconds) for cached results to be shown: <br><input type="number" value="30" name="recent_time_limit">
     <br><br>
     <!-- Proxy (optional): <br><input type="input" name="proxy">
     <br><br> -->
+    <b>{{ error_message }}</b>
+    <br><br>
     <input type="submit" value="Get search results" class="btn btn-primary">
   </form>
 

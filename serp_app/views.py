@@ -20,8 +20,13 @@ def index(request):
         datatime_recent_limit = timezone.now()-timezone.timedelta(seconds=recent_time_limit)
         recent_search_results =SearchResult.objects.filter(query=request.GET.get('query'),created_at__gt=datatime_recent_limit)
         if not recent_search_results:
-
-            new_search_result = GoogleSearch.search(request.GET.get('query'),request.GET.get('browser'))
+            try:
+                new_search_result = GoogleSearch.search(request.GET.get('query'),request.GET.get('browser'))
+            except:
+                return render(request, 'serp_app/serp_form.html', {
+                'show_result':False,
+                'error_message': "Something is not working. That's all we know."
+                })
 
             result_db_object = SearchResult.objects.create(query = new_search_result.query,
                                                                 results_total = new_search_result.results_total,

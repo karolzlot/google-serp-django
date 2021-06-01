@@ -66,7 +66,7 @@ class GoogleSearch():
         if count < 1:
             raise Exception('no google search results')
 
-        popular_word_dataclasses = GoogleSearch.most_common_words(all_descriptions)
+        popular_word_dataclasses = GoogleSearch._most_common_words(all_descriptions)
 
 
         search_results=SearchResultDataclass(
@@ -80,7 +80,7 @@ class GoogleSearch():
         return search_results
 
     @staticmethod
-    def most_common_words(text:str):
+    def _most_common_words(text:str, n:int=10):
 
         text_without_special_chars=re.sub(r'\W+', ' ', text)
         text_only_letters=''.join([i for i in text_without_special_chars if not i.isdigit()]).lower()
@@ -89,7 +89,7 @@ class GoogleSearch():
 
         words_counter = Counter(words)
 
-        popular_words = words_counter.most_common(10)
+        popular_words = words_counter.most_common(n)
 
         from .search_result import PopularWordDataclass
         popular_word_dataclasses = [PopularWordDataclass(word=i[0],occurances=i[1]) for i in popular_words]
