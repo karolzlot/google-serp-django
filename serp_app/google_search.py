@@ -8,7 +8,7 @@ from collections import Counter
 class GoogleSearch():
     
     @staticmethod
-    def search(query,browser='chrome',only_links=False):
+    def search(query:str,browser:str='chrome',only_links:bool=False):
 
         google_search_url  = "https://www.google.pl/search?lr=lang_pl&num=30&q="+query
 
@@ -80,7 +80,7 @@ class GoogleSearch():
         return search_results
 
     @staticmethod
-    def most_common_words(text):
+    def most_common_words(text:str):
 
         text_without_special_chars=re.sub(r'\W+', ' ', text)
         text_only_letters=''.join([i for i in text_without_special_chars if not i.isdigit()]).lower()
@@ -97,7 +97,7 @@ class GoogleSearch():
         return popular_word_dataclasses
                 
     @staticmethod
-    def multiple_search(queries,browser='chrome'): # zadanie dodatkowe
+    def multiple_search(queries:list[str],browser:str='chrome'): # zadanie dodatkowe
         multiple_search_results=[]
 
         for query in queries:
