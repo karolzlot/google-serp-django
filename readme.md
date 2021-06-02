@@ -23,7 +23,7 @@ Then you can run this app by creating virtual environment or by starting docker.
 1. Build and run Docker:
 ```
 docker build . --tag google-serp-django
-docker run --env-file .env -p 8080:8080 -it google-serp-django
+docker run --env-file .env -p 8080:8080 google-serp-django
 ```
 2. Go to app address:
 http://localhost:8080/
