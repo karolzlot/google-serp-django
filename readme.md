@@ -71,14 +71,6 @@ I set `ATOMIC_REQUESTS` to `True`
 
 However this setting is not good idea under heavy load. In that case I would specify transactions manually.
 
-### What could be improved in this project (if I could find time):
-
-- validation of form fields
-- better saving of last state of form fields, so user don't need to repeat entering settings
-- change of server in Dockerfile from interanal django server to faster `asgi` server, e.g. `Uvicorn`
-- choice of google domain and language, currenlty those are hard-coded to Polish version of google
-- handling of cookies and better coping with robot detection
-
 ### @dataclass in `search_result.py`
 
 I added `Dataclass` to names of dataclass objects, so those are different from names in `models.py`. They could be easily mistaken otherwise.
@@ -99,9 +91,17 @@ In database I save datatime only as timezone-aware (in other words they are UTC 
 
 ### Postgres
 
-Sqlite databases are not easy to use in dockerizes environment. I switched to Postgres for Cloud deployment. Therefore I divided settings to be able to use those both databases
+Sqlite databases are not easy to use in dockerized environment. I switched to Postgres for Cloud deployment. Therefore I divided settings to be able to use those both databases
 
 ### Type hinting
 
 I use it in some places, but I still am not familiar enough to use it everywhere.
 
+
+## What could be improved in this project (if I could find time):
+
+- validation of form fields
+- better saving of last state of form fields, so user don't need to repeat entering settings
+- change of server in Dockerfile from interanal django server to faster `asgi` server, e.g. `Uvicorn`
+- choice of google domain and language, currenlty those are hard-coded to Polish version of google
+- handling of cookies and better coping with robot detection
