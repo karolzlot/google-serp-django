@@ -1,15 +1,13 @@
-from django.test import TestCase
+from time import sleep
+
+from django.test import Client, TestCase
+
+from .google_search import GoogleSearch
+from .search_result import PopularWordDataclass
+from .views import get_client_ip
 
 # Create your tests here.
 
-import datetime
-from django.utils import timezone
-from .models import Link_with_position, SearchResult
-from django.test import Client
-from .views import get_client_ip
-from .google_search import GoogleSearch
-from .search_result import PopularWordDataclass 
-from time import sleep
 
 
 class RequestTests(TestCase):

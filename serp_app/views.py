@@ -1,9 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-
-from .models import SearchResult,PopularWord,Link_with_position
+from django.shortcuts import render
 from django.utils import timezone
+
 from .google_search import GoogleSearch
+from .models import Link_with_position, PopularWord, SearchResult
 
 # Create your views here.
 

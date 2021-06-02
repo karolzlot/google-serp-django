@@ -1,8 +1,11 @@
-from bs4 import BeautifulSoup
 import re
-import requests
-from .search_result import SearchResultDataclass,PopularWordDataclass,LinkDataclass
 from collections import Counter
+
+import requests
+from bs4 import BeautifulSoup
+
+from .search_result import (LinkDataclass, PopularWordDataclass,
+                            SearchResultDataclass)
 
 
 class GoogleSearch():
