@@ -34,7 +34,8 @@ class GoogleSearch():
 
 
         result_stats_txt = soup.find('div',{'id':'result-stats'}).text.replace(u'\xa0', u' ').replace(u' ', u'')
-        result_stats = int(re.search(r'\d+', result_stats_txt).group())
+        result_stats_txt_tmp = result_stats_txt.replace('.', '').replace(',', '')
+        result_stats = int(re.search(r'\d+', result_stats_txt_tmp).group())
 
         search_results = soup.findAll('div',{'class':'tF2Cxc'})
 
@@ -97,7 +98,7 @@ class GoogleSearch():
         return popular_word_dataclasses
                 
     @staticmethod
-    def multiple_search(queries:list[str],browser:str='chrome'): # zadanie dodatkowe
+    def multiple_search(queries,browser:str='chrome'): # zadanie dodatkowe
         multiple_search_results=[]
 
         for query in queries:

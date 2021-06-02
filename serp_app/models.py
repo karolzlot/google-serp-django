@@ -10,7 +10,7 @@ class SearchResult(models.Model):
                   primary_key = True,
                   serialize = False, 
                 )
-    query = models.CharField(max_length=100)
+    query = models.CharField(max_length=200)
     results_total = models.BigIntegerField()
     created_at = models.DateTimeField(default=timezone.now)
     client_ip =  models.GenericIPAddressField()
@@ -22,7 +22,7 @@ class Link_with_position(models.Model):
                   primary_key = True,
                   serialize = False, 
                 )
-    link = models.CharField(max_length=150)
+    link = models.CharField(max_length=1000)
     position = models.IntegerField()
     search_result =  models.ForeignKey(SearchResult, on_delete=models.CASCADE)
 
