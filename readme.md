@@ -25,7 +25,7 @@ Then you can run this app by creating virtual environment or by starting docker.
 docker build . --tag google-serp-django
 docker run --env-file .env -p 8080:8080 -it google-serp-django
 ```
-2. Got to app address:
+2. Go to app address:
 http://localhost:8080/
 
 
@@ -58,7 +58,7 @@ python -m venv .venv --prompt google-serp-django
     python manage.py runserver --settings=mysite.settings.cloud_postgres
     ```
 
-3. Got to app address:
+3. Go to app address:
 http://localhost:8080/
 
 
