@@ -100,6 +100,7 @@ I use it in some places, but I still am not familiar enough to use it everywhere
 
 ## What could be improved in this project (if I could find time):
 
+- add support of proxies
 - validation of form fields
 - better saving of last state of form fields, so user don't need to repeat entering settings
 - change of server in Dockerfile from internal django server to faster `asgi` server, e.g. `Uvicorn`
