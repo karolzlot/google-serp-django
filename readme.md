@@ -11,14 +11,14 @@ https://google-serp-django-gyuifrl2nq-ew.a.run.app/
 
 How to run this app
 1. Rename `.env.example` to `.env`. This file contains environmental variables.
-2. Fill to `.env` file at least `SECRET_KEY` by some random characters, it is used internally by Django
-3. (Optionally) Fill to `.env` cerdentials to your Postgres database
+2. In `.env` file fill at least `SECRET_KEY` with some random characters, it is used internally by Django.
+3. (Optionally) Fill `.env` with credentials to your Postgres database.
 
 Then you can run this app by creating virtual environment or by starting docker.
 
 
 ### A. Running in Docker:
-(You need to fill Postgres db credentials to `.env` in this case, this Docker method doesn't work with sqlite)
+(You need to fill Postgres db credentials to `.env` file in this case, this Docker method doesn't work with sqlite)
 
 1. Build and run Docker:
 ```
@@ -83,6 +83,11 @@ However this setting is not good idea under heavy load. In that case I would spe
 
 I added `Dataclass` to names of dataclass objects, so those are different from names in `models.py`. They could be easily mistaken otherwise.
 
+### File `google_search.py` 
+
+As `GoogleSearch()` class doesn't have any state, I decided to make it a class with `@staticmethod` methods only. 
+
+This practice is a bit controversial, because I could just remove class and leave only bunch of functions in thi sfile. But in my opinion class with static methods looks a little nicer, so I left it this way. It's just personal preference.
 
 ### File `view.py` 
 
@@ -99,11 +104,4 @@ Sqlite databases are not easy to use in dockerizes environment. I switched to Po
 ### Type hinting
 
 I use it in some places, but I still am not familiar enough to use it everywhere.
-
-### File `google_search.py` 
-
-As `GoogleSearch()` class doesn't have any state, I decided to make it a class with static methods only. 
-
-This practice is a bit controversial, because I could just remove class and leave only bunch of functions in thi sfile. But in my opinion class with static methods looks a little nicer, so I left it this way. It's just personal preference.
-
 
