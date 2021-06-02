@@ -63,7 +63,7 @@ class RequestTests(TestCase):
         self.assertNotIn(b"from cache: <b>True", response.content) 
 
 
-class GoogleSearchClassTest(TestCase):
+class GoogleSearchClassTests(TestCase):
     def test_search(self):
         search_result=GoogleSearch.search('meble')
         self.assertGreater(search_result.results_total, 10000000)

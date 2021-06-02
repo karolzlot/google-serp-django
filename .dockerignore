@@ -1,3 +1,4 @@
 .git
 db.sqlite3
 .env
+deploy.sh
