@@ -87,11 +87,11 @@ I wonder if it is possible to make calls to db in this file simpler. They are no
 
 
 ### UTC
-In database I save datatime only as timezone-aware (in other words they are UTC only datetime)
+In database I save datatime only as timezone-aware (in other words it is UTC-only datetime).
 
 ### Postgres
 
-Sqlite databases are not easy to use in dockerized environment. I switched to Postgres for Cloud deployment. Therefore I divided settings to be able to use those both databases
+Sqlite databases are not easy to use in dockerized environment. I switched to Postgres for deployment in Cloud. Therefore I divided settings to be able to use those both databases.
 
 ### Type hinting
 
