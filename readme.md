@@ -83,7 +83,7 @@ This practice is a bit controversial, because I could just remove class and leav
 
 ### File `view.py` 
 
-I wonder if it is possile to make calls to db in this file simpler. They are now quite spacious unfortunately.
+I wonder if it is possible to make calls to db in this file simpler. They are now quite spacious unfortunately.
 
 
 ### UTC
