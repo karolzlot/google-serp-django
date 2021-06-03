@@ -104,5 +104,5 @@ I use it in some places, but I still am not familiar enough to use it everywhere
 - validation of form fields
 - better saving of last state of form fields, so user don't need to repeat entering settings
 - change of server in Dockerfile from internal django server to faster `asgi` server, e.g. `Uvicorn`
-- choice of google domain and language, currenlty those are hard-coded to Polish version of google
+- choice of google search domain and language, currently those are hard-coded to Polish version of google search
 - handling of cookies and better coping with robot detection
