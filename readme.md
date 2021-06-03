@@ -79,7 +79,7 @@ I added `Dataclass` to names of dataclass objects, so those are different from n
 
 As `GoogleSearch()` class doesn't have any state, I decided to make it a class with `@staticmethod` methods only. 
 
-This practice is a bit controversial, because I could just remove class and leave only bunch of functions in thi sfile. But in my opinion class with static methods looks a little nicer, so I left it this way. It's just personal preference.
+This practice is a bit controversial, because I could just remove class and leave only bunch of functions in this file. But in my opinion class with static methods looks a little nicer, so I left it this way. It's just personal preference.
 
 ### File `view.py` 
 
