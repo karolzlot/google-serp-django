@@ -6,7 +6,7 @@ Tested on python 3.9
 
 Demo of this app is available, it uses Google Cloud Run and Google Cloud SQL (Postgres):
 
-https://google-serp-django-gyuifrl2nq-ew.a.run.app/
+https://google-serp-django-gyuifrl2nq-lm.a.run.app/
 
 
 How to run this app
