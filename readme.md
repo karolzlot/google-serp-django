@@ -4,10 +4,6 @@ It is my first attempt to make app with Django. And I liked it. I was using only
 
 Tested on python 3.9
 
-Demo of this app is available, it uses Google Cloud Run and Google Cloud SQL (Postgres):
-
-https://google-serp-django-gyuifrl2nq-lm.a.run.app/
-
 
 How to run this app
 1. Rename `.env.example` to `.env`. This file contains environmental variables.
